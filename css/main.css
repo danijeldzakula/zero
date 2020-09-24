@@ -39,7 +39,7 @@ body {
     gap: 0 10px;
     grid-template-columns: 50px 50px 50px 50px;
     justify-content: space-between;
-    background-color: #2b2a2a;
+    background-color: rgba(0,0,0,.85);
     z-index: 1001;
 }
 
@@ -400,9 +400,9 @@ body {
 
 @media only screen and (min-width: 992px) {
     .product__img {
-        max-width: 240px;
+        max-width: 260px;
         float: left;
-        margin-bottom: inherit;
+        margin-bottom: auto;
     }
 }
 
@@ -467,6 +467,10 @@ body {
     }
 }
 
+.orders .order__bottom .p {
+    margin-bottom: 0;
+}
+
 .orders .order__bottom .price__box {
     display: flex;
     justify-content: space-between;
@@ -502,18 +506,19 @@ body {
     font-size: 22px;
     text-align: center;
     line-height: 1.358;  
-    margin-top: 15px;
-    margin-bottom: 15px;
-    padding-left: 14%;
-    padding-right: 14%;
-    padding-top: 30px;
+    margin: 20px 0;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 25px;
+    padding-bottom: 25px;
     text-transform: uppercase;
+    background-color: #fff;
 }
 
 .orders .group__input {
     display: block;
     width: 100%;
-    padding: 30px 15px;
+    padding: 0 15px 30px 15px;
 }
 
 .orders .group__input select {
@@ -523,17 +528,34 @@ body {
     padding: 10px 15px;
     border: 0;
     border-bottom: 1px solid silver;
+    background-color: #fff;
 }
 
 .orders .group__input input {
     width: 100%;
     margin-bottom: 25px;
     display: block;
-    padding: 10px 15px;
+    padding: 14px 15px;
     outline: 0;
     border: 0;
     border-bottom: 1px solid silver;
+    background-color: #fff;
+    color: #000;
 }
+
+::placeholder {
+  color: #000;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: #000;
+}
+
+::-ms-input-placeholder {
+  color: #000;
+}
+
 
 .orders .group__input .order__btn-submit {
     width: 100%;
@@ -566,9 +588,62 @@ body {
 }
 
 
+.time__counter {
+    display: flex;
+    justify-content: center;
+}
 
+.time__counter .counter {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
 
+.time__counter .counter:nth-child(2) {
+    margin: 0 10px;
+}
 
+.time__counter .counter::after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    margin: auto;
+    text-align: center;
+    clear: both;
+    display: block;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    color: #666;
+}
+
+.time__counter .counter-hours::after {
+    content: 'časova';
+}
+
+.time__counter .counter-minuts::after {
+    content: 'minuta';
+}
+
+.time__counter .counter-seconds::after {
+    content: 'sekundi';
+}
+
+.time__counter .counter .value {
+    display: inline-flex;
+}
+
+.time__counter .counter .value-first {
+    font-size: 22px;
+}
+
+.time__counter .counter .value-second {
+    font-size: 20px;
+}
 
 
 
@@ -584,9 +659,8 @@ body {
     border: 1px solid #dddfe2;
     border-radius: 3px;
     color: #4b4f56;
-    padding:50px;
+    padding:20px;
     font-family: Helvetica, Arial, sans-serif;
-    font-size: 82.5%;
 }
 .header_comment{
     font-size: 14px;
@@ -774,9 +848,52 @@ body {
 }
 
 
+.hide-small {
+    display: none;
+}
+@media only screen and (min-width: 992px) {
+    .hide-small {
+        display: initial;
+    }
+}
 
 
+.order-btn {
+    display: inline-flex;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: #ff0057;
+    font-weight: 600;
+    border-radius: 50px;
+    color: #fff;
+    padding: 0 10px;    
+}
 
+.affix {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background-color: rgba(0,0,0,.85);
+    border-top: 2px solid #444;
+    text-align: center;
+    line-height: 38px;
+}
+
+.affix .paragraph {
+    color: #fff;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+}
+
+@media only screen and (min-width: 992px) {
+    .affix .paragraph {
+        font-size: 22px;
+    }
+}
 
 .mt-10 {
     margin-top: 10px;
@@ -804,10 +921,14 @@ body {
     }
 }
 
-@media only screen and (min-width: 991px) {
+@media only screen and (min-width: 992px) {
     .title {
         font-size: 2.5rem;
     }
+}
+
+.t-uppercase {
+    text-transform: uppercase;
 }
 
 .italic {

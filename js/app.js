@@ -98,3 +98,89 @@ function submit_reply(){
 function cancel_reply(){
 	$('.reply_comment').remove();
 }
+
+$(document).ready(function() {});
+
+$(function () {
+
+    var timerdate = new Date();
+    var nextdate = new Date();
+
+    var curr_day = timerdate.getDate();
+    var curr_hrs = timerdate.getHours();
+    var curr_min = timerdate.getMinutes();
+    var curr_sec = timerdate.getSeconds();
+
+    var sec = 59 - curr_sec;
+    var min = 59 - curr_min;
+    var hrs = 23 - curr_hrs;
+    var days = (curr_day + 0) - curr_day;
+
+    var timer = setInterval(function () {
+
+        sec--;
+
+        if (sec == -1) {
+            sec = 59;
+            min--;
+        }
+
+        if (min == -1) {
+            min = 59;
+            hrs--;
+        }
+
+        if (hrs == -1) {
+            hrs = 23;
+            days--;
+        }
+
+        if (days == -1) {
+            days = 30;
+        }
+        
+        days = days.toString();
+        hrs = hrs.toString();
+        min = min.toString();
+        sec = sec.toString();
+        
+        if (hrs.length < 2){
+            hrs = '0' + hrs;
+        }
+        if (days.length < 2){
+            days = '0' + days;
+        }
+        if (min.length < 2){
+            min = '0' + min;
+        }
+        if (sec.length < 2){
+            sec = '0' + sec;
+        }
+        
+        var daysArray = days.split("");
+        var hrsArray = hrs.split("");
+        var minArray = min.split("");
+        var secArray = sec.split("");
+
+        $('.counter-hours .value-first').text(hrs[0]);
+        $('.counter-hours .value-second').text(hrs[1]);
+
+        $('.counter-minuts .value-first').text(min[0]);
+        $('.counter-minuts .value-second').text(min[1]);        
+
+        $('.counter-seconds .value-first').text(sec[0]);
+        $('.counter-seconds .value-second').text(sec[1]);
+
+    }, 1000);
+	
+    $('.scrollToOrder').click(function(e) {
+        e.preventDefault();
+        $("html, body").animate({
+            scrollTop: $($(e.target).attr('href')).offset().top - 102
+        }, 600);
+        return false;
+    });
+});
+
+
+

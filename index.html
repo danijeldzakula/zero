@@ -86,7 +86,7 @@
 	<main class="gl__main">
 		<div class="container">
 			<div class="row">
-				<div class="col-8">
+				<div class="col-9">
 					<h1 class="title"><span class="c-red">Lorem ipsum dolor sit amet</span>, consectetur adipisicing elit. Perferendis consequatur perspiciatis a, vel magni.</h1>
 
 					<img src="./img/cover.jpg" alt="cover" title="Cover Images" class="cover__img">
@@ -277,7 +277,7 @@
 
 					<p class="paragraph center light__mark"><strong class="bolder">In recusandae</strong> <span class="c-red"> libero ullam tenetur </span> hic quod veritatis rerum quae alias a error.</p>
 
-					<div class="orders clearfix">
+					<div class="orders clearfix" id="orders">
 						<img src="./img/hiper.png" class="product__img" alt="Product" title="Product">
 
 						<div class="order__wrap clearfix" id="order">
@@ -295,9 +295,29 @@
 									</div>
 								</div>
 
-								<p class="info__text">
-									Recite gde da vam pošaljemo vašu porudžbinu
+								<p class="p center c-red t-uppercase">
+									<strong class="bolder">Do kraja akcije prostalo:</strong>
 								</p>
+
+								<div class="time__counter">
+									<div class="counter counter-hours">
+										<span class="value value-first">0</span>
+										<span class="value value-second">0</span>
+									</div>
+
+									<div class="counter counter-minuts">
+										<span class="value value-first">0</span>
+										<span class="value value-second">0</span>
+									</div>
+
+									<div class="counter counter-seconds">
+										<span class="value value-first">0</span>
+										<span class="value value-second">0</span>
+									</div>
+
+					            </div>	
+
+								<p class="info__text">Recite gde da vam pošaljemo vašu porudžbinu</p>
 
 								<div class="group__input">
 									<select name="country" class="country">
@@ -440,6 +460,10 @@
 	        <p class="t-c fz-small">Klikom na dugme «poručiti» potvrdjujete da ste pročitali <a href="doc/privacy.html" target="_blank">« Politika Privatnosti »</a> i dali pristanak na obradu vaših ličnih podataka</p>
 	    </div>
 	</footer>
+
+	<div class="affix">
+		<p class="paragraph">Samo danas: <span class="nowdate c-red bolder"></span> <span class="hide-small">po specijalnoj ceni! </span> <a href="#order" class="order-btn scrollToOrder">Poruči odmah</a></p>
+	</div>
 
 	<script src="./js/app.js"></script>
 	<script src="./js/main.js"></script>
